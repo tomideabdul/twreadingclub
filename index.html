@@ -141,6 +141,7 @@ details.book p.soon{color:var(--muted);font-style:italic}
 .card .btn{align-self:flex-start;margin-top:auto}
 .space{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
 .space small{display:block;color:var(--muted);font-size:14px}
+.evnote{margin-top:4px;max-width:62ch}
 .note{border:1px dashed var(--line);border-radius:6px;padding:22px;color:var(--muted)}
 
 /* podcast */
@@ -286,7 +287,7 @@ footer .brand img{height:22px}
   <div class="stack">
     <p class="eyebrow">Beyond the screen</p>
     <h1>Events</h1>
-    <p class="lede">The club is not only a monthly call. We have organised events where members meet in person to talk about books, play, paint and make new friends.</p>
+    <p class="lede">The club is not only a monthly call. We have organised and joined events where members meet in person to talk about books, play, paint and make new friends.</p>
   </div>
   <section>
     <div class="stack" id="evfeat"></div>
@@ -510,13 +511,15 @@ q.addEventListener("input",renderYears);renderPills();renderYears();
 /* Events */
 var EV=[
  {date:"15 Dec 2024",title:"Sip and Paint the cover of an African book",loc:"Millennium Park, Abuja",feat:1},
+ {date:"2025",title:"Ake Festival 2025",loc:"BON Hotel, Ikeja, Lagos",note:"Organised by Book Buzz Foundation and attended by club members from several states, including Ibadan, Abuja, Jos, Uyo and Lagos."},
+ {date:"15 Nov 2026",title:"Sip and Paint + Meat Tasting",loc:"Meraki Fitness Studio, Kaduna",upcoming:1},
  {date:"29 Dec 2024",title:"Hooked on Books and Each Other (Book Speed Dating)",loc:"Location withheld"},
  {date:"14 Sep 2024",title:"Book review and African Bookish Games",loc:"Acropolis Park, Zone A, Apo Resettlement, Abuja"},
  {date:"14 Sep 2024",title:"Book review and African Bookish Games",loc:"Johnson Jakande Tinubu (JJT) Park, Ikeja, Lagos"}
 ];
 EV.forEach(function(e){
   if(e.feat){document.getElementById("evfeat").appendChild(el("div","now","<span class=\"tag\">Featured · "+esc(e.date)+"</span><div><h3>"+esc(e.title)+"</h3><p class=\"by\">"+esc(e.loc)+"</p></div>"));return}
-  document.getElementById("evlist").appendChild(el("div","space","<div>"+esc(e.title)+"<small>"+esc(e.loc)+"</small></div><span class=\"mo\">"+esc(e.date)+"</span>"))});
+  document.getElementById("evlist").appendChild(el("div","space","<div>"+esc(e.title)+(e.upcoming?'<span class=\"badge\">Upcoming</span>':"")+"<small>"+esc(e.loc)+"</small>"+(e.note?"<small class=\"evnote\">"+esc(e.note)+"</small>":"")+"</div><span class=\"mo\">"+esc(e.date)+"</span>"))});
 
 /* Spaces & reviews */
 var rc=document.getElementById("reviewcards");
