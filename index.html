@@ -347,6 +347,13 @@ nav a.navjoin:hover{background:var(--accent);color:var(--accent-ink)}
   </div>
   <section>
     <div class="stack">
+      <p class="eyebrow">Highlights</p>
+      <h2>Featured episodes</h2>
+      <div class="cards" id="featep"></div>
+    </div>
+  </section>
+  <section>
+    <div class="stack">
       <h2>Listen</h2>
       <div class="plats" id="plats"></div>
     </div>
@@ -552,6 +559,12 @@ if(CONFIG.spaces.length){CONFIG.spaces.forEach(function(s){var r=el("div","space
 else sl.appendChild(el("div","note","The list of past Spaces and their listening links is coming soon."));
 
 /* Podcast + footer */
+var FEAT=[
+ {guest:"Fatimah Borkono",label:"Listen on Spotify",url:"https://open.spotify.com/episode/5pSpIozw6urpnIey5X63Ub"},
+ {guest:"Eusebius Odira",label:"Watch on YouTube",url:"https://youtube.com/playlist?list=PLuD89F3qNGenwMCFEaRW-mCG7X96NEUOl"}
+];
+var fe=document.getElementById("featep");
+FEAT.forEach(function(x){var c=el("div","card","<p class=\"eyebrow\" style=\"margin:0\">Featured episode</p><h3>"+esc(x.guest)+"</h3><p>In conversation on The Khard and Kulture Podcast.</p>");c.appendChild(link(x.label,x.url,"btn"));fe.appendChild(c)});
 var pl=document.getElementById("plats");POD.platforms.forEach(function(p){pl.appendChild(link(p[0],p[1],"btn"))});
 function socials(id,obj){var ul=document.getElementById(id);(Array.isArray(obj)?obj:Object.keys(obj).map(function(k){return[k,obj[k]]})).forEach(function(p){var li=el("li");var a=el("a","",esc(p[0]));a.href=p[1];a.target="_blank";a.rel="noopener";li.appendChild(a);ul.appendChild(li)})}
 socials("podsoc",POD.socials);socials("clubsoc",CLUB);
