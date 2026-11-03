@@ -141,6 +141,7 @@ details.book p.soon{color:var(--muted);font-style:italic}
 .card .btn{align-self:flex-start;margin-top:auto}
 .space{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
 .space small{display:block;color:var(--muted);font-size:14px}
+@media (min-width:821px){.cards.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .evnote{margin-top:4px;max-width:62ch}
 .note{border:1px dashed var(--line);border-radius:6px;padding:22px;color:var(--muted)}
 
@@ -349,7 +350,7 @@ nav a.navjoin:hover{background:var(--accent);color:var(--accent-ink)}
     <div class="stack">
       <p class="eyebrow">Highlights</p>
       <h2>Featured episodes</h2>
-      <div class="cards" id="featep"></div>
+      <div class="cards three" id="featep"></div>
     </div>
   </section>
   <section>
@@ -561,7 +562,8 @@ else sl.appendChild(el("div","note","The list of past Spaces and their listening
 /* Podcast + footer */
 var FEAT=[
  {guest:"Fatimah Borkono",label:"Listen on Spotify",url:"https://open.spotify.com/episode/5pSpIozw6urpnIey5X63Ub"},
- {guest:"Eusebius Odira",label:"Watch on YouTube",url:"https://youtube.com/playlist?list=PLuD89F3qNGenwMCFEaRW-mCG7X96NEUOl"}
+ {guest:"Eusebius Odira",label:"Watch on YouTube",url:"https://youtube.com/playlist?list=PLuD89F3qNGenwMCFEaRW-mCG7X96NEUOl"},
+ {guest:"Zainab Sacchie",label:"Listen on Apple Podcasts",url:"https://podcasts.apple.com/ng/podcast/the-khard-and-kulture-podcast/id1896920911?i=1000777675242"}
 ];
 var fe=document.getElementById("featep");
 FEAT.forEach(function(x){var c=el("div","card","<p class=\"eyebrow\" style=\"margin:0\">Featured episode</p><h3>"+esc(x.guest)+"</h3><p>In conversation on The Khard and Kulture Podcast.</p>");c.appendChild(link(x.label,x.url,"btn"));fe.appendChild(c)});
