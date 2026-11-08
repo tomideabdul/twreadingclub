@@ -218,7 +218,7 @@ nav a.navjoin:hover{background:var(--accent);color:var(--accent-ink)}
       <a href="#library" data-view="library">Library</a>
       <a href="#events" data-view="events">Events</a>
       <a href="#reviews" data-view="reviews">Reviews</a>
-      <a href="#podcast" data-view="podcast">Podcast</a>
+      <a href="#podcast" data-view="podcast">Podcast &amp; Spaces</a>
       <a class="navjoin js-join" target="_blank" rel="noopener">Join</a>
     </nav>
   </div>
@@ -613,7 +613,7 @@ function route(){
   views.forEach(function(n){document.getElementById("view-"+n).hidden=(n!==v)});
   document.querySelectorAll("nav a").forEach(function(a){if(a.dataset.view===v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
   if(h==="founder"||h==="spaces"){var t=document.getElementById(h);if(t)t.scrollIntoView()}else window.scrollTo(0,0);
-  var titles={home:"Wildkhard Reading Club",library:"The Library",reviews:"Reviews",podcast:"The Khard and Kulture Podcast"};
+  var titles={home:"Wildkhard Reading Club",library:"The Library",reviews:"Reviews",podcast:"Podcast & Spaces"};
 }
 window.addEventListener("hashchange",route);route();
 })();
