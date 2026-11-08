@@ -155,6 +155,19 @@ details.book p.soon{color:var(--muted);font-style:italic}
 .sthumb{width:72px;height:72px;padding:0;border:0;border-radius:6px;overflow:hidden;background:var(--line);cursor:zoom-in}
 .sthumb img{width:100%;height:100%;object-fit:cover;display:block}
 @media (max-width:560px){.space.hasimg{grid-template-columns:56px minmax(0,1fr)}.space.hasimg .btn{grid-column:2}.sthumb{width:56px;height:56px}}
+.read{max-width:64ch;margin:0 auto}
+.read .back{font-size:15px;color:var(--accent);text-decoration:none;display:inline-block;margin-bottom:28px}
+.read .back:hover{text-decoration:underline}
+.read h1{font-size:clamp(32px,5vw,50px)}
+.read .sub{font-family:var(--display);font-size:clamp(20px,2.6vw,26px);color:var(--muted);margin-top:10px}
+.read .byline{margin:22px 0 34px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:15px;color:var(--muted)}
+.read .byline strong{color:var(--ink);font-weight:600}
+.read .body p{font-size:18.5px;line-height:1.75;margin:0 0 1.15em}
+.read .rnote{margin-top:32px;padding:18px 22px;background:var(--accent-soft);border-radius:6px;font-size:16px}
+.read .rnote ol{margin:8px 0 0 20px;padding:0}
+.read .about{margin-top:36px;padding-top:22px;border-top:1px solid var(--line)}
+.read .about p{color:var(--muted);font-size:16px;margin:6px 0 0}
+.revx{display:block;color:var(--muted);font-size:14.5px;margin-top:6px;max-width:70ch}
 .evrow{padding:18px 0;border-bottom:1px solid var(--line)}
 .evrow .space{padding:0;border:0}
 .evfeatwrap{display:flex;flex-direction:column}
@@ -352,6 +365,11 @@ nav a.navjoin:hover{background:var(--accent);color:var(--accent-ink)}
       <p class="fine" id="revnote"></p>
     </div>
   </section>
+</div>
+
+<!-- SINGLE REVIEW -->
+<div id="view-review" data-view="reviews" hidden>
+  <article class="read" id="readbox"></article>
 </div>
 
 <!-- PODCAST -->
@@ -582,12 +600,16 @@ EV.forEach(function(e){
   var row=el("div","evrow");row.appendChild(el("div","space","<div>"+esc(e.title)+(e.upcoming?'<span class=\"badge\">Upcoming</span>':"")+"<small>"+esc(e.loc)+"</small>"+(e.note?"<small class=\"evnote\">"+esc(e.note)+"</small>":"")+"</div><span class=\"mo\">"+esc(e.date)+"</span>"));if(e.photos)row.appendChild(gal(e.photos,e.title+", "+e.loc));document.getElementById("evlist").appendChild(row)});
 
 /* Spaces & reviews */
-var REV=[
- /* {title:"Review title",book:"Book title",author:"Book author",by:"Reviewer",date:"1 Nov 2026",url:"https://..."} */
-];
+var REV=[{"slug": "binti-return-to-home", "title": "It Might Seem New But It is a Return to Home | A Review of BINTI", "book": "Binti", "author": "Nnedi Okorafor", "by": "Yetunde Arowosegbe", "role": "Club member", "date": "6 Jan 2024", "body": ["Binti opens naturally in ‘Binti’ (the first part of the series) to a futuristic world which is as fantastical as it feels right at home. The story is not over-told or spiced with unnecessary tacky words. We are eased into this new world easily through the eyes of the titular character Binti. Binti felt like a third-person narrator. A vehicle to live the story rather than the protagonist.", "The plot retains the push and pull of present-day race politics in its futuristic world, albeit transcending it into an inter-galaxy equivalent of racism. It is important to note parallels are drawn between the treatment of present-day black bodies and their proximity to “Afro-featurism” or the African continent in this new world.", "This specificity in retaining nuances of the present boosts the plot with familiarity and effectively plunges itself into the deep waters of prejudice and racism, discussing the nuances. It expressly informs us that beyond our differences, we are all human and equally narrow-minded. We despise other groups while simultaneously holding similar values dearest to our hearts when it comes to kinsmen.", "However, I kept wondering if this is much of a future tale or the plunging of the present world into an alternate dimension because it would be quite fatal to assume race politics would remain the same so far into the future. It makes no room for the speculations of revolutions within the space and time between the past, present and the jump to Binti’s future world. The first part of the series ends on a contemplative note.", "Nnedi Okorafor knows fantasy and tells it like it is real. She doles out her imaginations in the familiar tone of folktales. Folktales are kinsmen of the fantasy genre. Nnedi tells Binti in the simplistic casual manner of folktales but like folktales the series in itself is hardly simpleminded. Binti is thoroughly fantastical. Her infusion of overt and subtle African elements throughout the thread of the series is as true to the fantasy genre as possible. It hardly feels out of place. It might seem new but it is a return to home.", "Nnedi retains the beauty of community directly drawing inspiration from African communities and masterfully making it relatable to her contemporary readers without seeming fussy or forceful. Her story might as well be a return to home and sitting with our uncomfortable truths just as well as we sit with our beautiful truths as seen in the emotional throes and triumphs of Binti in ‘Binti Home’. Some might argue that in the final part, Binti becomes an allegory for unity or the confluence of opposing influences.", "By the end of the series, Binti has lost much of her third-person narrator vibe. It appears the writer has intentionally de-personified the first series to reduce clutter as she builds the plot and fully introduces us to her character. We become invested in the depth of Binti’s character, her spirituality and the inner workings of her mind. We are presented with an enigma with complex and opposing interests, an outlier who somehow remains grounded despite it all. This is a gift of beautiful imagination and depth of human emotions and experiences.", "Beyond the broad theme of prejudice and discrimination that brushes throughout the series, the reader will be gifted the theme of contemplative feminism, gender politics and familial ties in this coming-of-age series. The curtain of the series gracefully falls on a satisfying open-ended note. My favourite line in the series would be: ‘What reason does a man have to be beautiful? Beauty does not need a reason.’"], "note": "Binti is a trilogy", "items": ["Binti", "Binti: Home", "Binti: The Night Masquerade"], "about": "Yetunde is a writer and a reader who enjoys anything art. She dreams about gallery strolls and loves solitude at a park at sunset. She is an “Oliver” who can be caught writing existential poetry and reviews but that doesn’t mean she won’t dip her feet into the waters of fashion, photography and other artistic things."}];
+function excerpt(t){var x=t.split(". ")[0]+".";return x.length>190?x.slice(0,187).replace(/\s+\S*$/,"")+"…":x}
 var rl=document.getElementById("revlist");
-if(REV.length){REV.forEach(function(r){var row=el("div","space","<div>"+esc(r.title)+"<small>"+(r.book?"On "+esc(r.book)+(r.author?" by "+esc(r.author):"")+" · ":"")+"by "+esc(r.by)+(r.date?" · "+esc(r.date):"")+"</small></div>");row.appendChild(link("Read",r.url,"btn ghost"));rl.appendChild(row)})}
+if(REV.length){REV.forEach(function(r){var row=el("div","space","<div>"+esc(r.title)+"<small>"+(r.book?"On "+esc(r.book)+(r.author?" by "+esc(r.author):"")+" · ":"")+"by "+esc(r.by)+(r.date?" · "+esc(r.date):"")+"</small>"+(r.body?'<span class="revx">'+esc(excerpt(r.body[0]))+"</span>":"")+"</div>");if(r.body){var a=el("a","btn ghost","Read");a.href="#review/"+r.slug;row.appendChild(a)}else row.appendChild(link("Read",r.url,"btn ghost"));rl.appendChild(row)})}
 else rl.appendChild(el("div","note","Our members\u2019 reviews are moving here. The first pieces will appear shortly."));
+function showReview(slug){var r=REV.filter(function(x){return x.slug===slug})[0];var box=document.getElementById("readbox");if(!r){location.hash="#reviews";return false}
+var parts=r.title.split(" | "),h='<a class="back" href="#reviews">\u2190 All reviews</a><p class="eyebrow">Book review</p><h1>'+esc(parts[0])+"</h1>"+(parts[1]?'<p class="sub">'+esc(parts[1])+"</p>":"")+'<p class="byline"><strong>'+esc(r.by)+"</strong>"+(r.role?" · "+esc(r.role):"")+(r.date?" · "+esc(r.date):"")+(r.book?" · On "+esc(r.book)+(r.author?" by "+esc(r.author):""):"")+'</p><div class="body">'+r.body.map(function(p){return"<p>"+esc(p)+"</p>"}).join("")+"</div>";
+if(r.note)h+='<div class="rnote"><strong>Note: '+esc(r.note)+"</strong><ol>"+(r.items||[]).map(function(i){return"<li>"+esc(i)+"</li>"}).join("")+"</ol></div>";
+if(r.about)h+='<div class="about"><p class="eyebrow" style="margin:0">About the author</p><p>'+esc(r.about)+"</p></div>";
+h+='<p class="fine" style="margin-top:32px"><a href="#reviews">\u2190 Back to all reviews</a></p>';box.innerHTML=h;document.title=parts[0]+" \u00b7 Wildkhard Reading Club";return true}
 document.getElementById("revnote").innerHTML="Want to share your own review? Email <a href=\"mailto:twreadingclub@gmail.com\">twreadingclub@gmail.com</a>.";
 var sl=document.getElementById("spacelist");
 if(CONFIG.spaces.length){CONFIG.spaces.forEach(function(s){var r=el("div","space"+(s.img?" hasimg":""),"<div>"+esc(s.title)+(s.date?"<small>"+esc(s.date)+"</small>":"")+"</div>");if(s.img){var tb=document.createElement("button");tb.type="button";tb.className="sthumb";tb.setAttribute("aria-label","View flyer: "+s.title);var ti=new Image();ti.src="data:image/jpeg;base64,"+SP[s.img];ti.alt="Flyer for "+s.title;tb.appendChild(ti);tb.onclick=function(){lb.querySelector("img").src=ti.src;lb.querySelector("img").alt=ti.alt;lb.showModal()};r.insertBefore(tb,r.firstChild)}r.appendChild(link("Listen",s.url,"btn ghost"));sl.appendChild(r)})}
@@ -607,14 +629,18 @@ function socials(id,obj){var ul=document.getElementById(id);(Array.isArray(obj)?
 socials("podsoc",POD.socials);socials("clubsoc",CLUB);
 
 /* Routing */
-var views=["home","library","events","reviews","podcast"];
+var views=["home","library","events","reviews","podcast","review"];
 function route(){
-  var h=(location.hash||"#home").slice(1);if(h==="footer")return;if(views.indexOf(h)<0&&h!=="founder"&&h!=="spaces")h="home";
+  var h=(location.hash||"#home").slice(1);if(h==="footer")return;var slug="";
+  if(h.indexOf("review/")===0){slug=h.slice(7);h="review"}
+  if(views.indexOf(h)<0&&h!=="founder"&&h!=="spaces")h="home";
+  if(h==="review"&&!showReview(slug))return;
   var v=h==="founder"?"home":h==="spaces"?"podcast":h;
   views.forEach(function(n){document.getElementById("view-"+n).hidden=(n!==v)});
-  document.querySelectorAll("nav a").forEach(function(a){if(a.dataset.view===v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  var nv=v==="review"?"reviews":v;
+  document.querySelectorAll("nav a").forEach(function(a){if(a.dataset.view===nv)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
   if(h==="founder"||h==="spaces"){var t=document.getElementById(h);if(t)t.scrollIntoView()}else window.scrollTo(0,0);
-  var titles={home:"Wildkhard Reading Club",library:"The Library",reviews:"Reviews",podcast:"Podcast & Spaces"};
+  var titles={home:"Wildkhard Reading Club",library:"The Library",events:"Events",reviews:"Reviews",podcast:"Podcast & Spaces"};if(h!=="review")document.title=(titles[v]||"Wildkhard Reading Club")+(v==="home"?"":" \u00b7 Wildkhard Reading Club");
 }
 window.addEventListener("hashchange",route);route();
 })();
